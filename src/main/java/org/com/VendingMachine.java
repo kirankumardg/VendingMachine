@@ -89,7 +89,7 @@ public class VendingMachine implements Machine {
 							+ this.stock.get(name).getPrice());
 				}
 			}
-
+			System.out.println("Press 0 followed by # to exit" );
 			System.out.println("#######################################");
 			int itemSelectedid = 0;
 
@@ -100,7 +100,11 @@ public class VendingMachine implements Machine {
 				else if (input.next().equals("#"))
 					break;
 			}
-			System.out.println(itemSelectedid);
+		
+			
+			if(itemSelectedid==0) {
+				break;
+			}
 
 			if (itemSelectedid <= 0 && itemSelectedid >= 4) {
 				System.out.println("Enter a valid menu item");
@@ -108,12 +112,15 @@ public class VendingMachine implements Machine {
 
 			}
 
+			
+			
 			Item item = null;
 
 			if (this.menu.containsKey(itemSelectedid)) {
 				item = this.stock.get(this.menu.get(itemSelectedid));
 			}
 
+			System.out.println("Item selected is " + item.getName());
 			System.out.println("Please enter coins followed by # to start selection: ");
 			input = new Scanner(System.in);
 
