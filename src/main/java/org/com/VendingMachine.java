@@ -121,7 +121,7 @@ public class VendingMachine implements Machine {
 			}
 
 			System.out.println("Item selected is " + item.getName());
-			System.out.println("Please enter coins followed by # to start selection: ");
+			System.out.println("Please enter coins followed by # ");
 			input = new Scanner(System.in);
 
 			while (input.hasNext()) {
